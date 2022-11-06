@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moxi.portfolio_app.portfolio_app">
+    package="com.example.moxi_portfolio">
     <queries>
         <!-- to opens https URLs -->
         <intent>
