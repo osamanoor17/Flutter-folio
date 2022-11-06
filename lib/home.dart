@@ -79,31 +79,31 @@ class _MyHomeState extends State<MyHome> {
               ),
               icon: Icon(Icons.menu),
               itemBuilder: (context) => [
-                    PopupMenuItem(
-                      child: TextButton(
-                          child: Text(
-                            'Projects',
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/project');
-                          }),
-                      value: 1,
-                    ),
-                    PopupMenuItem(
-                      child: TextButton(
-                          child: Text(
-                            'About Me',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/about');
-                          }),
-                      value: 2,
-                    )
-                  ]),
+                PopupMenuItem(
+                  child: TextButton(
+                      child: Text(
+                        'Projects',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/project');
+                      }),
+                  value: 1,
+                ),
+                PopupMenuItem(
+                  child: TextButton(
+                      child: Text(
+                        'About Me',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/about');
+                      }),
+                  value: 2,
+                )
+              ]),
         ),
         body: SlidingSheet(
           elevation: 8,
@@ -144,7 +144,7 @@ class _MyHomeState extends State<MyHome> {
                       Text('Muhammad Osama Noor',
                           style: TextStyle(
                               fontFamily: "Soho",
-                              color: Colors.white,
+                              color: Colors.amberAccent,
                               fontSize: 30,
                               fontWeight: FontWeight.bold)),
                       SizedBox(
@@ -153,9 +153,9 @@ class _MyHomeState extends State<MyHome> {
                       Text(
                         'Flutter Developer',
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.cyanAccent,
                             fontFamily: "Soho",
-                            fontSize: 20),
+                            fontSize: 25),
                       ),
                     ],
                   ),
