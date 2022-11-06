@@ -78,60 +78,112 @@ class _MyAppState extends State<MyApp> {
                   ),
                   const Text(
                     'Flutter Developer',
-                    style: TextStyle(color: Colors.red, fontSize: 20),
+                    style: TextStyle(color: Colors.red, fontSize: 25),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  SizedBox(
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text('Hire Me'),
-                      style: TextButton.styleFrom(
-                        primary: Colors.black,
-                        backgroundColor: Colors.teal, // Background Color
-                      ),
+                SizedBox(
+                  child: TextButton(
+
+                    onPressed: () async{
+                      const url =
+                          'https://muhammadosamanoor.ipzoneerp.com/';// or add your URL here
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    child: Text('Hire Me',style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.bold,
+                    ),),
+                    style: TextButton.styleFrom(
+                      primary: Colors.blue,
+                      backgroundColor: Colors.white, // Background Color
                     ),
-                    width: 120,
                   ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Row(
+                  width: 120,
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                    IconButton(
+                    onPressed: () async{
+            const url =
+            'https://www.instagram.com/me_izz_osama';// or add your URL here
+            if (await canLaunch(url)) {
+            await launch(url);
+            } else {
+            throw 'Could not launch $url';
+            }
+            },
+                icon: const Icon(
+                  FontAwesomeIcons.instagram,
+                  color: Colors.purpleAccent,
+                )),
+      IconButton(
+          onPressed: ()async {
+            const url =
+                'https://www.linkedin.com/in/muhammad-osama-noor-4185571a1?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BeWgzkIiMTnGZCPDVz2ITVQ%3D%3D';// or add your URL here
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          },
+          icon: const Icon(
+            FontAwesomeIcons.linkedin,
+            color: Colors.indigoAccent,
+          )),
+      IconButton(
+          onPressed: () async {
+            const url =
+                'https://github.com/Meizzosama';// or add your URL here
+            if (await canLaunch(url)) {
+              await launch(url);
+            } else {
+              throw 'Could not launch $url';
+            }
+          },
+          icon: Icon(
+            FontAwesomeIcons.github,
+            color: Colors.white,
+          )),
                       IconButton(
-                          onPressed: (){
+                          onPressed: () async {
+                            const url =
+                                'https://www.facebook.com/osama.don17';// or add your URL here
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
                           },
                           icon: Icon(
-                            FontAwesomeIcons.instagram,
-                            color: Colors.purpleAccent,
+                            FontAwesomeIcons.facebook,
+                            color: Colors.blueAccent,
                           )),
                       IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            FontAwesomeIcons.linkedin,
-                            color: Colors.lightBlueAccent,
-                          )),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            FontAwesomeIcons.github,
-                            color: Colors.white,
-                          )),
-                      IconButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            const url =
+                                'https://twitter.com/me_izz_osama';// or add your URL here
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
                           icon: Icon(
                             FontAwesomeIcons.twitter,
                             color: Colors.lightBlue,
                           )),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            FontAwesomeIcons.facebook,
-                            color: Colors.pinkAccent,
-                          ),
-                      ),
+
 
                     ],
                   )
