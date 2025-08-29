@@ -1,8 +1,8 @@
 
 // ignore_for_file: deprecated_member_use
+import 'package:flutterfolio/controller/github_controller.dart' as GithubController;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart' show FontAwesomeIcons;
 // ignore: library_prefixes
-import 'package:moxi_portfolio/controller/github_controller.dart' as GithubController;
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/app_imports.dart';

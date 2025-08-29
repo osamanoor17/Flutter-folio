@@ -1,4 +1,5 @@
-import 'package:moxi_portfolio/data/work_experiences_data.dart';
+
+import 'package:flutterfolio/data/work_experiences_data.dart';
 
 import '../../widgets/app_imports.dart';
 

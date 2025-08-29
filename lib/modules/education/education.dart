@@ -1,5 +1,5 @@
-import 'package:moxi_portfolio/data/education_data.dart';
 
+import '../../data/education_data.dart';
 import '../../widgets/app_imports.dart';
 
 class Education extends StatelessWidget {

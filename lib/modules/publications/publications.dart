@@ -1,6 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:moxi_portfolio/data/publications_data.dart';
+import 'package:flutterfolio/data/publications_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/app_imports.dart';

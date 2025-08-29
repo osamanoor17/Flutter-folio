@@ -1,7 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:moxi_portfolio/data/icon_map.dart';
-import 'package:moxi_portfolio/data/skills_data.dart';
+
+
+import 'package:flutterfolio/data/icon_map.dart';
+import 'package:flutterfolio/data/skills_data.dart';
 
 import '../../widgets/app_imports.dart';
 
