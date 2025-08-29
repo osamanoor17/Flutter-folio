@@ -1,8 +1,7 @@
 // ignore_for_file: deprecated_member_use
-
-import 'package:flutter/material.dart';
-import '../../data/achievements_data.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../widgets/app_imports.dart';
+import '../../data/achievements_data.dart';
 
 class Achievements extends StatelessWidget {
   Future<void> _launchUrl(String url) async {

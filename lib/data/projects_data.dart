@@ -358,5 +358,26 @@ final List<Map<String, dynamic>> bigProjects = [
     "footerLink": [
       {"name": "Presentation", "url": "https://www.linkedin.com/in/mosamanoor/details/projects/1753172525047/single-media-viewer?type=DOCUMENT&profileId=ACoAAC8-0pQBcEvFfPpOvq-xlkUEQMFj9P1Gq6E&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_projects_details%3BssZhSWKtRsmhnnoDLhr6tw%3D%3D"}
     ]
-  }
+  },
+  {
+  "image": "assets/tipwise.png",
+  "projectName": "Tip Wise — Built for Everyone",
+  "projectDesc": "A Flutter-based mobile app to easily split bills, calculate tips, and share expenses in real-time. Runs smoothly on Android & iOS with a beautiful UI, modern packages, and light/dark themes. Perfect for families, groups, colleagues, and travelers to manage dining or outing expenses hassle-free.",
+  "technologies": [
+    "Flutter",
+    "Provider (State Management)",
+    "Google Mobile Ads",
+    "Share Plus"
+  ],
+  "category": "Mobile Apps",
+  "year": "2025",
+  "status": "Live",
+  "footerLink": [
+    {
+      "name": "Play Store",
+      "url": "https://play.google.com/store/apps/details?id=com.osamanoor17.tip_wise"
+    }
+  ]
+}
+
   ];

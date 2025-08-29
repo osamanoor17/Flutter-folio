@@ -1,26 +1,142 @@
-# moxi_portfolio
+# Flutterfolio ⚡️
 
-A new Flutter project.
+A clean, beautiful, and responsive portfolio template for Software Developers built with Flutter!
+
+## Table of Contents
+
+- Features
+- Portfolio Sections
+- Getting Started
+- How to Use
+- Environment Setup
+- Customization
+- Deployment
+- Technologies Used
+- Contributors
+
+---
+
+## Features
+
+- Responsive design for all screen sizes
+- Beautiful gradient theme
+- Modular data-driven architecture
+- GetX navigation and feedback
+- Clickable links (projects, socials, contact)
+- Category-wise filtering for projects
+- All assets and data managed in separate files
+
+---
+
+## Portfolio Sections
+
+✔️ About Me  
+✔️ Skills  
+✔️ Education  
+✔️ Work Experience  
+✔️ Open Source Projects (GitHub)  
+✔️ Big Projects  
+✔️ Achievements & Certifications 🏆  
+✔️ Blogs  
+✔️ Publications  
+✔️ Contact  
+✔️ GitHub Profile
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter (latest stable version)
+- Git
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## How to Use
+
+```sh
+# Clone this repository
+git clone https://github.com/<your-username>/flutterfolio.git
+
+# Go into the repository
+cd flutterfolio
+
+# Install dependencies
+flutter pub get
+
+# Add your .env file (see below)
+```
+
+---
+
+## Environment Setup
+
+Create a `.env` file in the root directory with the following variables:
+
+```env
+GITHUB_TOKEN=your_github_token_here
+USE_GITHUB_DATA=true
+GITHUB_USERNAME=your_github_username_here
+```
+
+> **Note:** Keep your tokens secret. Do not share or commit them.
+
+---
+
+## Customization
+
+- All portfolio data is modularized in `lib/data/`
+- Change theme, colors, and layout in `lib/`
+- Add or update your resume, social links, and project details in the respective data files
+
+---
+
+## Deployment
+
+You can build and deploy your portfolio for web or mobile:
+
+```sh
+# For web
+flutter build web
+
+# For Android
+flutter build apk --split-per-abi
+
+# For iOS
+flutter build ios
+```
+
+Host your web build on GitHub Pages, Netlify, or any static hosting provider.
+
+---
+
+## Technologies Used
+
+- Flutter
+- Dart
+- GetX
+- flutter_screenutil
+- url_launcher
+
+---
+
+## Contributors
+
+Feel free to open issues or pull requests to contribute and make this template even better!
 
 
-![a5b2d9ef-ac5c-4d68-af9a-ded70e409063](https://user-images.githubusercontent.com/100303780/198143158-5cf33617-8390-474a-8c7c-c1db3bc432c9.jpg)
-![84af43fb-b5dd-47b0-9e0e-a3d2e2ea6aea](https://user-images.githubusercontent.com/100303780/198143170-a462b238-2b30-4cb9-9ebc-d2a0db8eb3c0.jpg)
-![496b9965-7946-4018-83a9-b4d1cca4ccc9](https://user-images.githubusercontent.com/100303780/198143173-e85b426b-d0f6-4982-b9ca-c6d78f67d16a.jpg)
-![WhatsApp Image 2022-11-06 at 23 22 28](https://user-images.githubusercontent.com/100303780/200189581-e562b917-6e09-4c2f-98fa-014a6a561c86.jpg)
+## Live Demo
+
+[View Live Example](https://your-demo-link.com)
 
 
-https://user-images.githubusercontent.com/100303780/200358523-4fa47f2b-db5f-4dc7-884d-37f46ca46bea.mp4
+## Screenshots
 
+Here are some screenshots of the app:
+
+<p align="center">
+	<img src="screenshots\portfolio.png" width="600" />
+</p>

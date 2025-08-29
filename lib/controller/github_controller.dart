@@ -4,7 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Map<String, dynamic>>> fetchPinnedProjects() async {
-  final githubToken = dotenv.env['REACT_APP_GITHUB_TOKEN'];
+  final githubToken = dotenv.env['GITHUB_TOKEN'];
   final username = dotenv.env['GITHUB_USERNAME'];
   final useGithubData = dotenv.env['USE_GITHUB_DATA']?.toLowerCase() == 'true';
 
@@ -49,7 +49,7 @@ Future<List<Map<String, dynamic>>> fetchPinnedProjects() async {
     );
 
     final data = jsonDecode(response.body);
-    print("🔍 GitHub API Response: ${jsonEncode(data)}"); // ✅ Debug
+    // ✅ Debug
 
     if (response.statusCode == 200) {
       final edges = data['data']?['user']?['pinnedItems']?['edges'] ?? [];
@@ -57,7 +57,6 @@ Future<List<Map<String, dynamic>>> fetchPinnedProjects() async {
     }
     return [];
   } catch (e) {
-    print("❌ Error: $e");
     return [];
   }
 }

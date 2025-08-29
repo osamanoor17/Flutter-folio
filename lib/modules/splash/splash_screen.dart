@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
 import 'package:lottie/lottie.dart';
-import 'package:moxi_portfolio/modules/about/about.dart';
+
+import '../../widgets/app_imports.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,9 +24,9 @@ class _SplashScreenState extends State<SplashScreen>
     )..repeat(reverse: true);
 
     Timer(const Duration(seconds: 3), () {
-      Get.to(
+      Get.offAll(
         () => const About(),
-        transition: Transition.zoom,
+        transition: Transition.fade,
         duration: const Duration(seconds: 2),
       );
     });

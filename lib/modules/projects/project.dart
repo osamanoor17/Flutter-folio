@@ -1,11 +1,11 @@
 
 // ignore_for_file: deprecated_member_use
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart' show FontAwesomeIcons;
 // ignore: library_prefixes
 import 'package:moxi_portfolio/controller/github_controller.dart' as GithubController;
 import 'package:url_launcher/url_launcher.dart';
-// import 'package:get/get.dart';
+
+import '../../widgets/app_imports.dart';
 import '../../data/projects_data.dart';
 
 class Projects extends StatefulWidget {
@@ -176,9 +176,19 @@ class _ProjectsState extends State<Projects> {
   }
 
   Widget bigProjectsTab() {
-    final filteredProjects = selectedCategory == "All"
-        ? bigProjects
+    List<Map<String, dynamic>> filteredProjects = selectedCategory == "All"
+        ? List<Map<String, dynamic>>.from(bigProjects)
         : bigProjects.where((p) => p["category"] == selectedCategory).toList();
+
+    filteredProjects.sort((a, b) {
+      // Sort by year (latest first), then alphabetically
+      int yearA = int.tryParse(a["year"].toString()) ?? 0;
+      int yearB = int.tryParse(b["year"].toString()) ?? 0;
+      if (yearA != yearB) {
+        return yearB.compareTo(yearA); // latest first
+      }
+      return a["projectName"].toString().toLowerCase().compareTo(b["projectName"].toString().toLowerCase());
+    });
     return Column(
       children: [
         SizedBox(

@@ -1,8 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:flutter/material.dart';
-import '../../data/skills_data.dart';
-import '../../data/icon_map.dart';
+import 'package:moxi_portfolio/data/icon_map.dart';
+import 'package:moxi_portfolio/data/skills_data.dart';
+
+import '../../widgets/app_imports.dart';
 
 class Skills extends StatefulWidget {
   const Skills({Key? key}) : super(key: key);
@@ -13,8 +14,10 @@ class Skills extends StatefulWidget {
 
 class _SkillsState extends State<Skills> {
   Widget skillTimeline() {
-    return Column(
-      children: List.generate(skills.length, (index) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+      child: Column(
+        children: List.generate(skills.length, (index) {
         final skill = skills[index];
         final Color skillColor =
             skill["color"] is Color ? skill["color"] : Color(skill["color"]);
@@ -27,7 +30,7 @@ class _SkillsState extends State<Skills> {
             // Timeline dot
             Column(
               children: [
-                const SizedBox(height: 5),
+                const SizedBox(height: 12),
                 Container(
                   width: 20,
                   height: 25,
@@ -51,13 +54,13 @@ class _SkillsState extends State<Skills> {
                   ),
               ],
             ),
-            const SizedBox(width: 15),
+            const SizedBox(width: 20),
 
             // Skill name with gradient background
             Expanded(
               child: Container(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                    const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
@@ -83,6 +86,7 @@ class _SkillsState extends State<Skills> {
           ],
         );
       }),
+      ),
     );
   }
 

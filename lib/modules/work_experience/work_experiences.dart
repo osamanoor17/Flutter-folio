@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
-import '../../data/work_experiences_data.dart';
+import 'package:moxi_portfolio/data/work_experiences_data.dart';
+
+import '../../widgets/app_imports.dart';
 
 class WorkExperiences extends StatelessWidget {
   const WorkExperiences({super.key});
