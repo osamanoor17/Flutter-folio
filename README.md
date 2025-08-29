@@ -59,7 +59,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```sh
 # Clone this repository
-git clone https://github.com/<your-username>/flutterfolio.git
+git clone https://github.com/osamanoor17/Flutter-folio.git
 
 # Go into the repository
 cd flutterfolio
