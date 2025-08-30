@@ -125,11 +125,9 @@ Host your web build on GitHub Pages, Netlify, or any static hosting provider.
 Feel free to open issues or pull requests to contribute and make this template even better!
 
 
-### Interactive Demo
+## Interactive Demo
 
-<p align="center">
-	<iframe src="https://appetize.io/app/b_fzyibcpbaijgwt23k6adylqmxy" width="375" height="700" frameborder="0" scrolling="no"></iframe>
-</p>
+[![Appetize Demo](screenshots/portfolio.png)](https://appetize.io/app/b_fzyibcpbaijgwt23k6adylqmxy)
 
 
 ## Screenshots
