@@ -12,6 +12,7 @@ class Publications extends StatelessWidget {
       throw Exception('Could not launch $url');
     }
   }
+
   const Publications({super.key});
 
   @override
@@ -20,32 +21,12 @@ class Publications extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Publications'),
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 29, 134, 134),
-                  Color.fromRGBO(241, 13, 13, 1)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-          ),
+          backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
         ),
         body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 29, 134, 134),
-                Color.fromRGBO(241, 13, 13, 1)
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: ListView.builder(
-            padding: const EdgeInsets.all(16),
+          color: Get.isDarkMode ? Colors.black : Colors.white,
+            child: ListView.builder(
+              padding:  const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             itemCount: publications.length,
             itemBuilder: (context, index) {
               final pub = publications[index];
@@ -55,37 +36,29 @@ class Publications extends StatelessWidget {
                   final url = pub['url'] ?? '';
                   if (url.isNotEmpty) {
                     await _launchUrl(url);
-                  } else {
-                  }
+                  } else {}
                 },
-                child: Container(
-                  margin: const EdgeInsets.only(bottom: 18),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xff0d47a1), Color(0xffe53935)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
+                child: Card(
+                                  color: Get.isDarkMode ? const Color.fromARGB(255, 49, 49, 49) : Colors.white,
+
                   child: Padding(
                     padding: const EdgeInsets.all(18),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(pub['title'] ?? '', style: const TextStyle(color: Colors.cyanAccent, fontSize: 20, fontWeight: FontWeight.bold)),
+                        Text(pub['title'] ?? '',
+                            style: TextStyle(
+                                color: Get.isDarkMode ?  Colors.white : Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
                         const SizedBox(height: 8),
-                        Text(pub['description'] ?? '', style: const TextStyle(color: Colors.white)),
+                        Text(pub['description'] ?? '',
+                            style: TextStyle(color: Get.isDarkMode ? Colors.white : Colors.black)),
                         const SizedBox(height: 8),
-                        Text('Publisher: ${pub['publisher'] ?? ''}', style: const TextStyle(color: Colors.white70)),
-                        Text('Date: ${pub['date'] ?? ''}', style: const TextStyle(color: Colors.white70)),
+                        Text('Publisher: ${pub['publisher'] ?? ''}',
+                            style: TextStyle(color: Get.isDarkMode ? Colors.white70 : Colors.black54)),
+                        Text('Date: ${pub['date'] ?? ''}',
+                            style: TextStyle(color: Get.isDarkMode ? Colors.white70 : Colors.black54)),
                       ],
                     ),
                   ),

@@ -19,31 +19,17 @@ class Achievements extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Achievements'),
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Color(0xff0d47a1), Color(0xffe53935)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-          ),
+          backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
         ),
         body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xff0d47a1), Color(0xffe53935)],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
+          color: Get.isDarkMode ? Colors.black : Colors.white,
           child: ListView.builder(
             padding: const EdgeInsets.all(16),
             itemCount: achievements.length,
             itemBuilder: (context, index) {
               final achievement = achievements[index];
               return Card(
-                color: const Color(0xff262628),
+                color: Get.isDarkMode ? Colors.grey[850] : Colors.white,
                 margin: const EdgeInsets.only(bottom: 18),
                 child: Padding(
                   padding: const EdgeInsets.all(16),
@@ -67,13 +53,17 @@ class Achievements extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(achievement['title'],
-                                    style: const TextStyle(
-                                        color: Colors.cyanAccent,
+                                    style: TextStyle(
+                                        color: Get.isDarkMode
+                                            ? Colors.white
+                                            : Colors.black,
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold)),
                                 Text(achievement['subtitle'],
-                                    style:
-                                        const TextStyle(color: Colors.white70)),
+                                    style: TextStyle(
+                                        color: Get.isDarkMode
+                                            ? Colors.white70
+                                            : Colors.black87)),
                               ],
                             ),
                           ),
@@ -93,8 +83,10 @@ class Achievements extends StatelessWidget {
                               }
                             },
                             child: Text(achievement['footerLink'][i]['name'],
-                                style:
-                                    const TextStyle(color: Colors.cyanAccent)),
+                                style: TextStyle(
+                                    color: Get.isDarkMode
+                                        ? Colors.white
+                                        : Colors.black)),
                           ),
                         ),
                       ),

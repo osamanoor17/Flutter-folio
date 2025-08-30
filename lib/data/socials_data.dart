@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutterfolio/widgets/app_imports.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final List<Map<String, dynamic>> socials = [
   {
     'icon': FontAwesomeIcons.github,
-    'color': Colors.black,
+    'color': Get.isDarkMode ? Colors.white : Colors.black,
     'url': 'https://github.com/osamanoor17',
   },
   {
@@ -24,12 +24,12 @@ final List<Map<String, dynamic>> socials = [
   },
   {
     'icon': FontAwesomeIcons.medium,
-    'color': Colors.black,
+    'color': Get.isDarkMode ? Colors.white : Colors.black,
     'url': 'https://medium.com/@m.osamanoor',
   },
   {
     'icon': FontAwesomeIcons.envelope,
-    'color': Colors.redAccent,
+    'color': Get.isDarkMode ? Colors.redAccent : Colors.redAccent,
     'url': 'mailto:mosamanoor17@gmail.com',
   },
 ];

@@ -11,6 +11,7 @@ class Contact extends StatelessWidget {
       throw Exception('Could not launch $url');
     }
   }
+
   const Contact({super.key});
 
   @override
@@ -19,35 +20,18 @@ class Contact extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Contact'),
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromARGB(255, 29, 134, 134),
-                  Color.fromRGBO(241, 13, 13, 1)
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),
-          ),
+          backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
         ),
         body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Color.fromARGB(255, 29, 134, 134),
-                Color.fromRGBO(241, 13, 13, 1)
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
+          color: Get.isDarkMode ? Colors.black : Colors.white,
           child: Center(
             child: Card(
-              color: const Color.fromARGB(255, 255, 255, 255),
+              color: Get.isDarkMode
+                  ? const Color.fromARGB(255, 49, 49, 49)
+                  : Colors.white,
               margin: const EdgeInsets.all(24),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
               elevation: 8,
               child: Padding(
                 padding: const EdgeInsets.all(28.0),
@@ -55,19 +39,22 @@ class Contact extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       'Reach Out to me!',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 10, 13, 211),
+                        color: Get.isDarkMode ? Colors.white : Colors.black,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 12),
-                    const Text(
+                    Text(
                       "Ready to collaborate on exciting projects? Whether you have an idea or just want to connect, I'm always open to new opportunities and conversations!",
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Color.fromARGB(179, 0, 0, 0), fontSize: 16),
+                      style: TextStyle(
+                          color:
+                              Get.isDarkMode ? Colors.white70 : Colors.black54,
+                          fontSize: 16),
                     ),
                     const SizedBox(height: 18),
                     Wrap(
@@ -75,7 +62,16 @@ class Contact extends StatelessWidget {
                       spacing: 18,
                       children: socials.map((social) {
                         return IconButton(
-                          icon: Icon(social['icon'], color: social['color'], size: 32),
+                          icon: Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                               color: Get.isDarkMode ? Colors.white70 : Colors.black12,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Icon(social['icon'],
+                                color: social['color'], size: 32),
+                          ),
                           onPressed: () async {
                             await _launchUrl(social['url']);
                           },
@@ -83,24 +79,36 @@ class Contact extends StatelessWidget {
                       }).toList(),
                     ),
                     const SizedBox(height: 18),
-                    const Text(
+                    Text(
                       'Software Engineer | Mobile Applications with Flutter | AI, Backend Systems, and Data Visualization',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 15, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                         color:
+                              Get.isDarkMode ? Colors.white70 : Colors.black54,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(height: 10),
-                    const Text('Karachi, Pakistan', style: TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontSize: 14)),
+                    Text('Karachi, Pakistan',
+                        style: TextStyle(
+                           color:
+                              Get.isDarkMode ? Colors.white70 : Colors.black54, fontSize: 14)),
                     const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 6),
                           decoration: BoxDecoration(
                             color: Colors.green,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Text('Open for opportunities: Yes', style: TextStyle(color: Color.fromARGB(255, 10, 10, 10), fontWeight: FontWeight.bold)),
+                          child: Text('Open for opportunities: Yes',
+                              style: TextStyle(
+                                 color:
+                              Get.isDarkMode ? Colors.white70 : Colors.black54,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ],
                     ),
@@ -116,9 +124,18 @@ class Contact extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.phone,  color: Color.fromARGB(255, 10, 13, 211),),
+                          Icon(
+                            Icons.phone,
+                           color:
+                              Get.isDarkMode ? Colors.white70 : Colors.black54,
+                          ),
                           const SizedBox(width: 8),
-                          Text(contactInfo['number'] ?? '', style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0), fontWeight: FontWeight.bold)),
+                          Text(contactInfo['number'] ?? '',
+                              style: TextStyle(
+                                  color: Get.isDarkMode
+                                      ? Colors.white70
+                                      : Colors.black54,
+                                  fontWeight: FontWeight.bold, fontSize: 16)),
                         ],
                       ),
                     ),
@@ -134,9 +151,17 @@ class Contact extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(Icons.email, color: Color.fromARGB(255, 10, 13, 211)),
+                          Icon(Icons.email,
+                              color: Get.isDarkMode
+                                  ? Colors.white70
+                                  : Colors.black54),
                           const SizedBox(width: 8),
-                          Text(contactInfo['email_address'] ?? '', style: const TextStyle(color: Color.fromARGB(255, 2, 2, 2), fontWeight: FontWeight.bold)),
+                          Text(contactInfo['email_address'] ?? '',
+                              style: TextStyle(
+                                  color: Get.isDarkMode
+                                      ? Colors.white70
+                                      : Colors.black54,
+                                  fontWeight: FontWeight.bold, fontSize: 16)),
                         ],
                       ),
                     ),

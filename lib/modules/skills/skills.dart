@@ -77,8 +77,8 @@ class _SkillsState extends State<Skills> {
                 child: Text(
                   skill["label"],
                   style: TextStyle(
-                    fontFamily: "Soho",
-                    color: skillColor.withOpacity(0.9),
+                    fontFamily: "Montserrat",
+                    color: Get.isDarkMode ? Colors.white : Colors.black,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
@@ -100,22 +100,22 @@ class _SkillsState extends State<Skills> {
         ),
         margin: const EdgeInsets.all(6),
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const Text(
+          Text(
             'What I do',
             style: TextStyle(
               fontSize: 20,
-              fontFamily: "Soho",
+              fontFamily: "Montserrat",
               fontWeight: FontWeight.bold,
-              color: Colors.black87,
+              color: Get.isDarkMode ? Colors.white : Colors.black87,
             ),
           ),
           const SizedBox(height: 8),
-          const Text(
+          Text(
             'Passionate developer building innovative solutions across tech stacks.',
             style: TextStyle(
               fontSize: 15,
-              fontFamily: "Soho",
-              color: Colors.black54,
+              fontFamily: "Montserrat",
+              color: Get.isDarkMode ? Colors.white70 : Colors.black54,
             ),
           ),
           const SizedBox(height: 30),
@@ -136,7 +136,7 @@ class _SkillsState extends State<Skills> {
       width: 105,
       child: Card(
         margin: const EdgeInsets.all(0),
-        color: const Color(0xff252525),
+              color: Get.isDarkMode ? const Color(0xff252525) : Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
@@ -152,8 +152,8 @@ class _SkillsState extends State<Skills> {
             ),
             Text(
               text,
-              style: const TextStyle(
-                  fontSize: 16, fontFamily: "Soho", color: Colors.white),
+        style: TextStyle(
+          fontSize: 16, fontFamily: "Montserrat", color: Get.isDarkMode ? Colors.white : Colors.black),
             ),
           ],
         ),
@@ -165,97 +165,77 @@ class _SkillsState extends State<Skills> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        extendBodyBehindAppBar: true,
-        backgroundColor: Colors.black,
+        backgroundColor: Get.isDarkMode ? Colors.black : Colors.white,
         appBar: AppBar(
-          title: const Text('Skills & Technologies'),
+          title: Text('Skills & Technologies',
+            style: TextStyle(
+              color: Get.isDarkMode ? Colors.white : Colors.black,
+              fontFamily: "Montserrat",
+            ),
+          ),
           backgroundColor: Colors.transparent,
         ),
-        body: Stack(
-          children: [
-            // Gradient background
-            Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Color.fromARGB(255, 29, 134, 134),
-                    Color.fromRGBO(241, 13, 13, 1)
-                  ],
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "What I do",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontFamily: "Montserrat",
+                  fontWeight: FontWeight.bold,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
                 ),
               ),
-            ),
-
-            // Heading, subtitle, and skill lines
-            Container(
-              margin: const EdgeInsets.only(top: 70, left: 12),
-              child: const Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "What I do",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontFamily: "Soho",
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+              const SizedBox(height: 8),
+              Text(
+                "PASSIONATE DEVELOPER CREATING INNOVATIVE SOLUTIONS ACROSS MULTIPLE TECH STACKS.",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontFamily: "Montserrat",
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 18),
+              Text(
+                "⚡ Build responsive web applications with React.js and cross-platform mobile apps with Flutter.",
+                style: TextStyle(fontSize: 15, color: Get.isDarkMode ? Colors.white70 : Colors.black87),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                "⚡ Develop AI-powered solutions and data analytics dashboards using Python, Flask, and machine learning tools.",
+                style: TextStyle(fontSize: 15, color: Get.isDarkMode ? Colors.white70 : Colors.black87),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                "⚡ Integration of cloud services like Firebase, AWS, and Google Cloud with expertise in databases like MongoDB.",
+                style: TextStyle(fontSize: 15, color: Get.isDarkMode ? Colors.white70 : Colors.black87),
+              ),
+              const SizedBox(height: 24),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(0, 253, 253, 253).withOpacity(0.95),
+                    borderRadius: BorderRadius.circular(24),
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 16,
                       ),
-                    ),
+                    ],
                   ),
-                  SizedBox(height: 8),
-                  Text(
-                    "PASSIONATE DEVELOPER CREATING INNOVATIVE SOLUTIONS ACROSS MULTIPLE TECH STACKS.",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontFamily: "Soho",
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
+                  child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+                    child: skillTimeline(),
                   ),
-                  SizedBox(height: 18),
-                  Text(
-                    "⚡ Build responsive web applications with React.js and cross-platform mobile apps with Flutter.",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                  SizedBox(height: 6),
-                  Text(
-                    "⚡ Develop AI-powered solutions and data analytics dashboards using Python, Flask, and machine learning tools.",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                  SizedBox(height: 6),
-                  Text(
-                    "⚡ Integration of cloud services like Firebase, AWS, and Google Cloud with expertise in databases like MongoDB.",
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
-
-            Container(
-              margin: const EdgeInsets.only(
-                  top: 310, left: 20, right: 20, bottom: 07),
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(0, 253, 253, 253).withOpacity(0.95),
-                borderRadius: BorderRadius.circular(24),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 16,
-                  ),
-                ],
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    skillTimeline(),
-                  ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

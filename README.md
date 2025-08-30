@@ -1,4 +1,4 @@
-# Flutterfolio ⚡️
+# flutterfolio ⚡️
 
 A clean, beautiful, and responsive portfolio template for Software Developers built with Flutter!
 
@@ -99,11 +99,8 @@ GITHUB_USERNAME=your_github_username_here
 You can build and deploy your portfolio for web or mobile:
 
 ```sh
-# For web
-flutter build web
-
 # For Android
-flutter build apk --split-per-abi
+flutter build apk --release
 
 # For iOS
 flutter build ios
@@ -128,9 +125,11 @@ Host your web build on GitHub Pages, Netlify, or any static hosting provider.
 Feel free to open issues or pull requests to contribute and make this template even better!
 
 
-## Live Demo
+### Interactive Demo
 
-[View Live Example](https://drive.google.com/file/d/15vbAJrmE-dwF08uErTVm0IBRqowO6Q9B/view?usp=sharing)
+<p align="center">
+	<iframe src="https://appetize.io/app/b_fzyibcpbaijgwt23k6adylqmxy" width="375" height="700" frameborder="0" scrolling="no"></iframe>
+</p>
 
 
 ## Screenshots
@@ -138,5 +137,7 @@ Feel free to open issues or pull requests to contribute and make this template e
 Here are some screenshots of the app:
 
 <p align="center">
-	<img src="screenshots\portfolio.png" width="600" />
+	<img src="screenshots/ss_1.png" width="600" />
+	<img src="screenshots/ss_2.png" width="600" />
+	<img src="screenshots/ss_3.png" width="600" />
 </p>
